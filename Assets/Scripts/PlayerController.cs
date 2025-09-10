@@ -23,9 +23,12 @@ public class PlayerController : Creature
 
     protected override void Start()
     {
-        base.Start();
+        currentHealth = maxHealth;
 
         healthBarInstance = healthBarPrefab;
+
+        healthText.text = "" + currentHealth;
+
     }
 
     // Update is called once per frame
