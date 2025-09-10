@@ -6,21 +6,26 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 10f; // Speed at which the enemy moves
 
     public float maxHealth = 2f;
-    private float currentHealth;
+    public float currentHealth;
 
     public Health healthBarPrefab;
     private Health healthBarInstance;
 
     private Transform worldSpaceCanvasTransform;
 
+    public static int enemyCount = 1;
+
     void Awake()
     {
-        if (worldSpaceCanvasTransform == null)
+        if (worldSpaceCanvasTransform == null)          //Find UI Canvas
         {
-            Canvas canvas = FindAnyObjectByType<Canvas>();
-            if (canvas != null && canvas.renderMode == RenderMode.WorldSpace)
+            Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+            foreach (Canvas canvas in canvases)
             {
-                worldSpaceCanvasTransform = canvas.transform;
+                if (canvas.renderMode == RenderMode.WorldSpace)
+                {
+                    worldSpaceCanvasTransform = canvas.transform;
+                }
             }
         }
     }
@@ -34,8 +39,17 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
 
         healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvasTransform);
-        healthBarInstance.transform.localScale = Vector3.one; // Reset scale so it's visible
+        healthBarInstance.name = "Health Bar " + enemyCount;
+
+        healthBarInstance.transform.localScale = Vector3.one; // Ensure scale is reset
+        healthBarInstance.transform.localPosition = Vector3.zero; // Ensure position is reset
+        healthBarInstance.transform.localRotation = Quaternion.identity; // Ensure rotation is reset
+
+        //healthBarInstance.transform.localScale = Vector3.one; // Reset scale so it's visible
         healthBarInstance.target = transform;
+
+        gameObject.name = "Enemy " + enemyCount;
+        enemyCount++;
     }
 
     void Update()
@@ -54,6 +68,8 @@ public class Enemy : MonoBehaviour
         {
 
             Destroy(collision.gameObject);  //Destroy player on contact
+            GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
+
 
         }
     }
@@ -64,14 +80,18 @@ public class Enemy : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         float normalizedHealth = currentHealth / maxHealth;
-        healthBarInstance.SetHealth(normalizedHealth);
-
-        healthBarInstance.gameObject.SetActive(normalizedHealth < 1f);
 
         if (currentHealth <= 0)
         {
-            Destroy(healthBarInstance.gameObject);
             Destroy(gameObject); // Or trigger death animation
+            Destroy(healthBarInstance.gameObject);
+            Debug.Log(healthBarInstance.name + " destroyed");
+
         }
+        else if (healthBarInstance != null)
+        {
+            healthBarInstance.SetHealth(normalizedHealth);
+        }
+        
     }
 }
