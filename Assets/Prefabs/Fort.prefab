@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4173011314072141836}
   - component: {fileID: 2070710826969937562}
   - component: {fileID: 6852266985677421515}
-  - component: {fileID: 4220277161239458713}
   - component: {fileID: 5187320152853812517}
+  - component: {fileID: 1350870162455440907}
   m_Layer: 0
   m_Name: Fort
   m_TagString: Untagged
@@ -112,20 +112,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4220277161239458713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523491527191192149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd48869987553343a21c5ee8b56b260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1608874870793345139, guid: 7866ed6d6e7202944a85f4f9b48547b5, type: 3}
-  spawnPoint: {fileID: 4178898910672027340}
 --- !u!65 &5187320152853812517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,6 +133,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1350870162455440907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523491527191192149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65a66c66a1ed1d49bda0edb56f9b60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+  spawnPoint: {fileID: 4178898910672027340}
 --- !u!1 &3949285955905359900
 GameObject:
   m_ObjectHideFlags: 0

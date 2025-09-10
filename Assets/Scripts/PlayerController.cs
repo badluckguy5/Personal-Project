@@ -1,7 +1,8 @@
 using UnityEngine;
+using TMPro;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Creature
 {
     private float speed = 10f;              // Player movement speed
     public float shootCooldown = 1f;        // Time between shots
@@ -11,11 +12,20 @@ public class PlayerController : MonoBehaviour
     private float lastShootTime = 0f;
     private float bulletSpeed = 10f;
 
+    public TMP_Text healthText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
 
+        maxHealth = 10;
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        healthBarInstance = healthBarPrefab;
     }
 
     // Update is called once per frame
@@ -89,6 +99,19 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+    }
+
+    public override void TakeDamage(float amount)
+    {
+        base.TakeDamage(amount);
+
+        healthText.text = "" + currentHealth;
+    }
+
+    protected override void TriggerDeath()
+    {
+        Time.timeScale = 0f;
+        GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
     }
 
 

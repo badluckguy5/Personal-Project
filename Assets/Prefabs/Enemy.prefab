@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6200435809687094060}
   - component: {fileID: 6228656131536335523}
   - component: {fileID: 2355509112914227629}
-  - component: {fileID: 7901019381113738873}
+  - component: {fileID: 5588674597623087711}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -138,7 +138,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9288837, y: 3.1063166, z: 1}
   m_Center: {x: 0.12823969, y: 1.0531585, z: 0}
---- !u!114 &7901019381113738873
+--- !u!114 &5588674597623087711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,13 +147,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608874870793345139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8ba39d8af866a4fb5010002a6955c6, type: 3}
+  m_Script: {fileID: 11500000, guid: d4d2c56c284eeea4cbbef667de5e5f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
   maxHealth: 2
   currentHealth: 0
   healthBarPrefab: {fileID: 3323621053046049925, guid: fa9def8058071af4fa9a8185e2d8ce77, type: 3}
+  moveSpeed: 5
 --- !u!1001 &4264870832651748757
 PrefabInstance:
   m_ObjectHideFlags: 0

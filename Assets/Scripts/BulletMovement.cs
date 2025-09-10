@@ -30,7 +30,7 @@ public class BulletMovement : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            Creature enemy = other.GetComponent<Creature>();
 
             if (enemy != null)
             {

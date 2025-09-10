@@ -1,21 +1,17 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Creature : MonoBehaviour
 {
-    private GameObject player; // Reference to the player's position
-    public float moveSpeed = 10f; // Speed at which the enemy moves
-
     public float maxHealth = 2f;
     public float currentHealth;
 
     public Health healthBarPrefab;
-    private Health healthBarInstance;
+    protected Health healthBarInstance;
 
     private Transform worldSpaceCanvasTransform;
 
-    public static int enemyCount = 1;
-
-    void Awake()
+    protected virtual void Awake()
     {
         if (worldSpaceCanvasTransform == null)          //Find UI Canvas
         {
@@ -32,14 +28,11 @@ public class Enemy : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
 
-        player = GameObject.Find("Player");
-
         healthBarInstance = Instantiate(healthBarPrefab, worldSpaceCanvasTransform);
-        healthBarInstance.name = "Health Bar " + enemyCount;
 
         healthBarInstance.transform.localScale = Vector3.one; // Ensure scale is reset
         healthBarInstance.transform.localPosition = Vector3.zero; // Ensure position is reset
@@ -48,33 +41,14 @@ public class Enemy : MonoBehaviour
         //healthBarInstance.transform.localScale = Vector3.one; // Reset scale so it's visible
         healthBarInstance.target = transform;
 
-        gameObject.name = "Enemy " + enemyCount;
-        enemyCount++;
     }
 
     void Update()
     {
-        if (player != null)
-        {
-            Vector3 direction = player.transform.position - transform.position; // Direction towards player
 
-            transform.Translate(direction.normalized * moveSpeed * Time.deltaTime); // Move the enemy towards the player
-        }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-
-            Destroy(collision.gameObject);  //Destroy player on contact
-            GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
-
-
-        }
-    }
-
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -83,15 +57,18 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject); // Or trigger death animation
-            Destroy(healthBarInstance.gameObject);
-            Debug.Log(healthBarInstance.name + " destroyed");
+            TriggerDeath();
 
         }
         else if (healthBarInstance != null)
         {
             healthBarInstance.SetHealth(normalizedHealth);
         }
-        
+    }
+
+    protected virtual void TriggerDeath()
+    {
+        Destroy(gameObject); // Or trigger death animation
+        Destroy(healthBarInstance.gameObject);
     }
 }
