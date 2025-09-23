@@ -39,8 +39,13 @@ public class BasicEnemy : Creature
         {
 
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(1);
-            TakeDamage(currentHealth);
+            CollisionDeath();
 
+            Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (playerRb != null)
+            {
+                playerRb.linearVelocity = Vector3.zero;  // Stop any current movement
+            }
         }
     }
 

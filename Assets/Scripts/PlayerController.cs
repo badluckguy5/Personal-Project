@@ -1,12 +1,26 @@
 using UnityEngine;
 using TMPro;
 
+public enum PlayerStat
+{
+    Speed,
+    ShootCooldown,
+    ShootRange,
+    BulletSpeed
+}
+
+public enum UpgradeType
+{
+    Additive,
+    Multiplicative
+}
+
 
 public class PlayerController : Creature
 {
-    private float speed = 10f;              // Player movement speed
-    public float shootCooldown = 1f;        // Time between shots
-    public float shootRange = 10f;          // Range of the shooting
+    public float speed = 10f;              // Player movement speed
+    private float shootCooldown = 1f;        // Time between shots
+    private float shootRange = 10f;          // Range of the shooting
     public GameObject projectilePrefab;     // Projectile prefab to shoot
     public Transform shootPoint;            // The point from where the projectile will be shot
     private float lastShootTime = 0f;
@@ -18,7 +32,7 @@ public class PlayerController : Creature
     {
         base.Awake();
 
-        maxHealth = 10;
+        maxHealth = 3;
     }
 
     protected override void Start()
@@ -117,5 +131,45 @@ public class PlayerController : Creature
         GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
     }
 
+    public void ApplyUpgrade(StatUpgradeSO upgrade)
+    {
+        switch (upgrade.stat)
+        {
+            case PlayerStat.Speed:
+                Apply(ref speed, upgrade);
+                Debug.Log("Speed upgraded to: " + speed);
+                break;
 
+            case PlayerStat.ShootCooldown:
+                Apply(ref shootCooldown, upgrade);
+                Debug.Log("Cooldown is now: " + shootCooldown);
+                break;
+
+            case PlayerStat.ShootRange:
+                Apply(ref shootRange, upgrade);
+                Debug.Log("Range is now: " + shootRange);
+                break;
+
+            case PlayerStat.BulletSpeed:
+                Apply(ref bulletSpeed, upgrade);
+                Debug.Log("Bullet speed is now: " + bulletSpeed);
+                break;
+        }
+    }
+
+    private void Apply(ref float stat, StatUpgradeSO upgrade)
+    {
+        switch (upgrade.upgradeType)
+        {
+            case UpgradeType.Additive:
+                stat += upgrade.amount;
+                break;
+
+            case UpgradeType.Multiplicative:
+                stat *= upgrade.amount;
+                break;
+        }
+
+        // Optional: clamp or limit upgrades
+    }
 }

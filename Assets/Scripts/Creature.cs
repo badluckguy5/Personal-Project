@@ -11,6 +11,8 @@ public class Creature : MonoBehaviour
 
     private Transform worldSpaceCanvasTransform;
 
+    public EnemyType enemyType;
+
     protected virtual void Awake()
     {
         if (worldSpaceCanvasTransform == null)          //Find UI Canvas
@@ -68,7 +70,17 @@ public class Creature : MonoBehaviour
 
     protected virtual void TriggerDeath()
     {
+        GameManager.Instance.RegisterEnemyKill(enemyType);
+        Destroy(gameObject); // Or trigger death animation
+        Destroy(healthBarInstance.gameObject);
+
+    }
+
+    protected virtual void CollisionDeath()
+    {
         Destroy(gameObject); // Or trigger death animation
         Destroy(healthBarInstance.gameObject);
     }
+
+
 }
