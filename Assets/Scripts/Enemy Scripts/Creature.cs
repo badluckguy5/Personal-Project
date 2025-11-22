@@ -5,6 +5,7 @@ public class Creature : MonoBehaviour
 {
     public float maxHealth = 2f;
     public float currentHealth;
+    public bool indoors = false;
 
     public Health healthBarPrefab;
     protected Health healthBarInstance;
@@ -25,6 +26,22 @@ public class Creature : MonoBehaviour
                     worldSpaceCanvasTransform = canvas.transform;
                 }
             }
+        }
+    }
+
+    protected virtual void OnEnable()
+    {
+        if (healthBarInstance != null)
+        {
+            healthBarInstance.gameObject.SetActive(true);
+        }
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (healthBarInstance != null)
+        {
+            healthBarInstance.gameObject.SetActive(false);
         }
     }
 
@@ -74,12 +91,6 @@ public class Creature : MonoBehaviour
         Destroy(gameObject); // Or trigger death animation
         Destroy(healthBarInstance.gameObject);
 
-    }
-
-    protected virtual void CollisionDeath()
-    {
-        Destroy(gameObject); // Or trigger death animation
-        Destroy(healthBarInstance.gameObject);
     }
 
 

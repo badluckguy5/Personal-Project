@@ -1,21 +1,6 @@
 using UnityEngine;
 using TMPro;
 
-public enum PlayerStat
-{
-    Speed,
-    ShootCooldown,
-    ShootRange,
-    BulletSpeed
-}
-
-public enum UpgradeType
-{
-    Additive,
-    Multiplicative
-}
-
-
 public class PlayerController : Creature
 {
     public float speed = 10f;              // Player movement speed
