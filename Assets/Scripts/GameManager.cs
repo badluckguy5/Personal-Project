@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public enum EnemyType
-{
-    Basic, Fast, Player
-}
 
 public class GameManager : MonoBehaviour
 {
