@@ -1781,8 +1781,65 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7045620876356937670, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6303202729840377894, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2072357123}
+    - targetCorrespondingSourceObject: {fileID: 6303202729840377894, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2072357122}
+    - targetCorrespondingSourceObject: {fileID: 6303202729840377894, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2072357121}
   m_SourcePrefab: {fileID: 100100000, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+--- !u!1 &2072357119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6303202729840377894, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+  m_PrefabInstance: {fileID: 2072357118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2072357120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5241770287156736544, guid: e77ef2b7af19e3a468af7828b558336d, type: 3}
+  m_PrefabInstance: {fileID: 2072357118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072357121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072357119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51171d3027f842340893df81e7dae688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2072357122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072357119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e04bd1870e76f544941337e7e9c827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2865705234832223072, guid: 4126204962b34fd40a1feeb17245e591, type: 3}
+  shootPoint: {fileID: 2072357120}
+--- !u!114 &2072357123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072357119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23d50226121b9d419f83c71c34bf20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1012817313211409702
 PrefabInstance:
   m_ObjectHideFlags: 0

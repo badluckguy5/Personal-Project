@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         var key = (type, GetKillCount(type));
         if (upgradeMilestones.ContainsKey(key))
         {
-            player.GetComponent<PlayerController>().ApplyUpgrade(upgradeMilestones[key]);
+            player.GetComponent<PlayerStats>().ApplyUpgrade(upgradeMilestones[key]);
             gameMessages.ShowMessage("Applied upgrade: " + upgradeMilestones[key].upgradeName);
         }
     }
