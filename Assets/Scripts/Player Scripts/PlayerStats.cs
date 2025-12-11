@@ -10,8 +10,8 @@ public class PlayerStats : MonoBehaviour
 
     public float GetSpeed => speed;
     public float GetShootCooldown => shootCooldown;
-    public float GetShootRange => speed;
-    public float GetBulletSpeed => speed;
+    public float GetShootRange => shootRange;
+    public float GetBulletSpeed => bulletSpeed;
 
     public void ApplyUpgrade(StatUpgradeSO upgrade)
     {

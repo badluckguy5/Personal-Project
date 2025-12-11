@@ -406,6 +406,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &182237329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3157805129891795337, guid: c6fa9edbab19d6442b4f0cae57adf05a, type: 3}
+  m_PrefabInstance: {fileID: 576529649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &359357619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5154651663768246342, guid: e3e2761d00ef69347a86c9f308d4ab9c, type: 3}
@@ -727,6 +732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810766679}
   - component: {fileID: 810766678}
+  - component: {fileID: 810766680}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -761,6 +767,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &810766680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810766677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a74bd4fff53c5e45acc60ba91bf5918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2072357119}
+  gameOverScreen: {fileID: 182237329}
+  messageSpawner: {fileID: 952277929}
 --- !u!114 &839885603 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 150830712849482337, guid: c6fa9edbab19d6442b4f0cae57adf05a, type: 3}
@@ -770,6 +791,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &952277929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9034868376934708151, guid: c6fa9edbab19d6442b4f0cae57adf05a, type: 3}
+  m_PrefabInstance: {fileID: 576529649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9dd8c8e52d8e54ba2f048d723840bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1003797604

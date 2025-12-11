@@ -1,10 +1,13 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerController : Creature
 {
     private PlayerStats stats;
     private PlayerShooter shooter;
+
+    private Rigidbody rb;
 
     public TMP_Text healthText;
 
@@ -14,6 +17,7 @@ public class PlayerController : Creature
 
         stats = GetComponent<PlayerStats>();
         shooter = GetComponent<PlayerShooter>();
+        rb = GetComponent<Rigidbody>();
 
         maxHealth = 3;
     }
@@ -24,7 +28,7 @@ public class PlayerController : Creature
 
         healthBarInstance = healthBarPrefab;
 
-        healthText.text = "" + currentHealth;
+        healthText.text = currentHealth.ToString(); ;
 
     }
 
@@ -42,8 +46,8 @@ public class PlayerController : Creature
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 move = new Vector3(horizontal, 0, vertical) * stats.GetSpeed * Time.deltaTime;
 
+        Vector3 move = new Vector3(horizontal, 0, vertical) * stats.GetSpeed * Time.deltaTime;
         transform.Translate(move, Space.World);
     }
 
@@ -51,13 +55,12 @@ public class PlayerController : Creature
     {
         base.TakeDamage(amount);
 
-        healthText.text = "" + currentHealth;
+        healthText.text = currentHealth.ToString();
     }
 
     protected override void TriggerDeath()
     {
-        Time.timeScale = 0f;
-        GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
+        GameManager.Instance.GameOver();
     }
 
 }
