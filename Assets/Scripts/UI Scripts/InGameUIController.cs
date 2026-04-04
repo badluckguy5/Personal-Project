@@ -17,11 +17,12 @@ public class InGameUIController : MonoBehaviour
 
     public void RestartLevel()
     {
+        Time.timeScale = 1f;
+
         Scene currentScene = SceneManager.GetActiveScene();
 
         // Reload the current scene
         SceneManager.LoadScene(currentScene.name);
 
-        Time.timeScale = 1f;
     }
 }

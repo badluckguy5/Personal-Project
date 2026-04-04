@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -6,6 +7,9 @@ public class PlayerController : Creature
 {
     private PlayerStats stats;
     private PlayerShooter shooter;
+    private PlayerEquipment equipment;
+
+    private Vector2 movementInput;
 
     private Rigidbody rb;
 
@@ -20,10 +24,25 @@ public class PlayerController : Creature
         rb = GetComponent<Rigidbody>();
 
         maxHealth = 3;
+
+        
+    }
+
+    private void OnDestroy()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnJump -= OnJump;
+        }
     }
 
     protected override void Start()
     {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnJump += OnJump;
+        }
+
         currentHealth = maxHealth;
 
         healthBarInstance = healthBarPrefab;
@@ -35,20 +54,18 @@ public class PlayerController : Creature
     // Update is called once per frame
     void Update()
     {
+        movementInput = InputManager.Instance.Movement;
         MovePlayer();
         shooter.PlayerShoot();
 
     }
 
-    //Moves player mased on keyboard input
+    //Moves player using Input System
     void MovePlayer()
     { 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-
-        Vector3 move = new Vector3(horizontal, 0, vertical) * stats.GetSpeed * Time.deltaTime;
+        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y) * stats.GetSpeed * Time.deltaTime;
         transform.Translate(move, Space.World);
+
     }
 
     public override void TakeDamage(float amount)
@@ -62,5 +79,21 @@ public class PlayerController : Creature
     {
         GameManager.Instance.GameOver();
     }
+
+    private void OnMovement(Vector2 input)
+    {
+        movementInput = input;
+    }
+
+    private void OnJump()
+    {
+
+    }
+
+    public Vector3 GetMovementDirection()
+    {
+        return new Vector3(movementInput.x, 0, movementInput.y).normalized;
+    }
+
 
 }

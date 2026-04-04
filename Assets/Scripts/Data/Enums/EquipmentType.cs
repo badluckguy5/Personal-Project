@@ -2,14 +2,13 @@ using UnityEngine;
 
 public enum EquipmentType
 {
-    Feet,
-    Legs,
-    Chest,
     Head,
+    Chest,
     Hands,
+    Legs, 
+    Feet,
     Weapon,
     Offhand,
     Necklace,
-    Ring1,
-    Ring2
+    Ring
 }

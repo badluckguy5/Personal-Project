@@ -21,7 +21,7 @@ public class EquipmentSO : ScriptableObject
 
     public void Remove(PlayerController player)
     {
-        player.GetComponent<PlayerStats>().ApplyUpgrade(statUpgrade);
+        player.GetComponent<PlayerStats>().RemoveUpgrade(statUpgrade);
 
         ability?.Deactivate(player);
     }

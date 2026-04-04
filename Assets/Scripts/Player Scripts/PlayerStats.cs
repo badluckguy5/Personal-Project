@@ -3,10 +3,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Base Stats")]
-    private float speed = 10f;              // Player movement speed
-    private float shootCooldown = 1f;        // Time between shots
-    private float shootRange = 10f;          // Range of the shooting
-    private float bulletSpeed = 10f;
+    [SerializeField]private float speed = 10f;              // Player movement speed
+    [SerializeField] private float shootCooldown = 1f;        // Time between shots
+    [SerializeField] private float shootRange = 10f;          // Range of the shooting
+    [SerializeField] private float bulletSpeed = 10f;
 
     public float GetSpeed => speed;
     public float GetShootCooldown => shootCooldown;
@@ -53,5 +53,47 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Optional: clamp or limit upgrades
+    }
+
+    public void RemoveUpgrade(StatUpgradeSO upgrade)
+    {
+        switch (upgrade.stat)
+        {
+            case PlayerStat.Speed:
+                Remove(ref speed, upgrade);
+                Debug.Log("Speed reverted to: " + speed);
+                break;
+
+            case PlayerStat.ShootCooldown:
+                Remove(ref shootCooldown, upgrade);
+                Debug.Log("Cooldown reverted to: " + shootCooldown);
+                break;
+
+            case PlayerStat.ShootRange:
+                Remove(ref shootRange, upgrade);
+                Debug.Log("Range reverted to: " + shootRange);
+                break;
+
+            case PlayerStat.BulletSpeed:
+                Remove(ref bulletSpeed, upgrade);
+                Debug.Log("Bullet speed reverted to: " + bulletSpeed);
+                break;
+        }
+    }
+
+    private void Remove(ref float stat, StatUpgradeSO upgrade)
+    {
+        switch (upgrade.upgradeType)
+        {
+            case UpgradeType.Additive:
+                stat -= upgrade.amount;
+                break;
+
+            case UpgradeType.Multiplicative:
+                stat /= upgrade.amount;
+                break;
+        }
+
+        // Optional: clamp back to minimums
     }
 }
