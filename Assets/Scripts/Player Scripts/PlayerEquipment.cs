@@ -52,6 +52,7 @@ public class PlayerEquipment : MonoBehaviour
         }
 
         OnEquipmentChanged?.Invoke();
+        Debug.Log($"OnEquipmentChanged event fired");
 
     }
 
@@ -78,7 +79,6 @@ public class PlayerEquipment : MonoBehaviour
         Debug.Log("Unequipped: " + data.equipmentName);
 
         OnEquipmentChanged?.Invoke();
-
     }
 
     public ItemInstance GetEquippedItem(EquipmentType slot)

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: TeleportAbility
   m_EditorClassIdentifier: Assembly-CSharp::BlinkAbility
   abilityName: Short Blink
+  abilityDescription: Blink a short distance
+  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   teleportDistance: 3
+  cooldown: 3
+  lastUseTime: -999

@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class FloatingMessageSpawner : MonoBehaviour
 {
+    public static FloatingMessageSpawner Instance {  get; private set; }
     public GameObject messagePrefab;       // The TextMeshProUGUI prefab
     public Transform messageContainer;     // The Vertical Layout Group
 
     public float messageDuration = 2f;     // How long before it fades out
+
+    public void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public void ShowMessage(string message)
     {

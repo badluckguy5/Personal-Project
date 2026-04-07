@@ -1,6 +1,6 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 
 public class ItemTooltip : MonoBehaviour
@@ -13,7 +13,10 @@ public class ItemTooltip : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float fadeSpeed = 10f;
-    [SerializeField] private Vector2 offset = new Vector2(20f, -20f);
+    [SerializeField] private Vector2 itemOffset = new Vector2(20f, -20f);
+    [SerializeField] private Vector2 abilityOffset = new Vector2(20f, 200f);
+
+    private Vector2 offset;
 
     private RectTransform rectTransform;
     private bool isVisible = false;
@@ -72,6 +75,8 @@ public class ItemTooltip : MonoBehaviour
         }
 
         isVisible = true;
+
+        offset = itemOffset;
     }
 
     public void Hide()
@@ -101,4 +106,36 @@ public class ItemTooltip : MonoBehaviour
 
         rectTransform.anchoredPosition = localPoint;
     }
+
+    public void ShowAbility(EquipmentAbility ability, Vector2 mousePosition)
+    {
+        if (ability == null) return;
+
+        if (itemNameText != null)
+        {
+            itemNameText.text = ability.abilityName;
+        }
+
+        if (itemTypeText != null)
+        {
+            itemTypeText.text = ability.GetCooldown() > 0 ? "Active Ability" : "Passive Ability";
+        }
+
+        if (itemDescriptionText != null)
+        {
+            string description = ability.abilityDescription;
+
+            if (ability.GetCooldown() > 0)
+            {
+                description += $"\n<color=yellow>Cooldown: {ability.GetCooldown()} seconds</color>";
+            }
+
+            itemDescriptionText.text = description;
+        }
+
+        isVisible = true;
+        offset = abilityOffset;
+        UpdatePosition();
+    }
 }
+
