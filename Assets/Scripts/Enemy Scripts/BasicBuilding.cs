@@ -15,9 +15,13 @@ public class BasicBuilding : MonoBehaviour
 
     protected bool isPlayerInsideZone = false;  // Whether the player is inside the area
 
+    protected LevelManager levelManager;
+
     protected virtual void OnEnable()
     {
-        if (LevelManager.Instance != null)
+        levelManager = FindAnyObjectByType<LevelManager>();
+
+        if (levelManager != null)
         {
             SubscribeToLevelManagerEvents();
         }
@@ -29,17 +33,18 @@ public class BasicBuilding : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        if (LevelManager.Instance != null)
+        if (levelManager != null)
         {
-            LevelManager.Instance.OnPlayerWentIndoors -= SetSlowSpawn;
-            LevelManager.Instance.OnPlayerWentOutdoors -= SetNormalSpawn;
+            levelManager.OnPlayerWentIndoors -= SetSlowSpawn;
+            levelManager.OnPlayerWentOutdoors -= SetNormalSpawn;
         }
     }
 
     private System.Collections.IEnumerator WaitForLevelManagerAndSubscribe()
     {
-        while (LevelManager.Instance == null)
+        while (levelManager == null)
         {
+            levelManager = FindAnyObjectByType<LevelManager>();
             yield return null; // wait for next frame
         }
         SubscribeToLevelManagerEvents();
@@ -49,8 +54,8 @@ public class BasicBuilding : MonoBehaviour
     {
         if (!subscribedToEvents)
         {
-            LevelManager.Instance.OnPlayerWentIndoors += SetSlowSpawn;
-            LevelManager.Instance.OnPlayerWentOutdoors += SetNormalSpawn;
+            levelManager.OnPlayerWentIndoors += SetSlowSpawn;
+            levelManager.OnPlayerWentOutdoors += SetNormalSpawn;
             subscribedToEvents = true;
         }
     }

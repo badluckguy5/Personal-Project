@@ -16,7 +16,7 @@ public class BasicEnemy : Creature
     {
         base.OnEnable();
 
-        if (LevelManager.Instance != null)
+        if (levelManager != null)
         {
             SubscribeToLevelManagerEvents();
         }
@@ -30,12 +30,12 @@ public class BasicEnemy : Creature
     {
         base.OnDisable();
 
-        if (LevelManager.Instance != null)
+        if (levelManager != null)
         {
-            LevelManager.Instance.OnPlayerWentIndoors -= SetGoToLastKnownLocation;
-            LevelManager.Instance.OnPlayerWentIndoors += CutSpeed;
-            LevelManager.Instance.OnPlayerWentOutdoors -= SetChasePlayer;
-            LevelManager.Instance.OnPlayerWentOutdoors -= RestoreSpeed;
+            levelManager.OnPlayerWentIndoors -= SetGoToLastKnownLocation;
+            levelManager.OnPlayerWentIndoors -= CutSpeed;
+            levelManager.OnPlayerWentOutdoors -= SetChasePlayer;
+            levelManager.OnPlayerWentOutdoors -= RestoreSpeed;
 
         }
     }
@@ -55,12 +55,12 @@ public class BasicEnemy : Creature
 
         if (!alerted)
         {
-            alerted = LevelManager.Instance.GetGlobalAlerted;
+            alerted = levelManager.GetGlobalAlerted;
         } 
 
         player = GameObject.Find("Player");
 
-        if (LevelManager.Instance.GetPlayerIndoors)
+        if (levelManager.GetPlayerIndoors)
         {
             if (indoors)
             {
@@ -71,7 +71,7 @@ public class BasicEnemy : Creature
             {
                 chasingPlayer = false;
                 CutSpeed(default);
-                targetPosition = LevelManager.Instance.GetPlayerLastLocation;
+                targetPosition = levelManager.GetPlayerLastLocation;
             }
                 
         }
@@ -99,8 +99,9 @@ public class BasicEnemy : Creature
 
     private System.Collections.IEnumerator WaitForLevelManagerAndSubscribe()
     {
-        while (LevelManager.Instance == null)
+        while (levelManager == null)
         {
+            levelManager = FindAnyObjectByType<LevelManager>();
             yield return null; // wait for next frame
         }
         SubscribeToLevelManagerEvents();
@@ -110,11 +111,11 @@ public class BasicEnemy : Creature
     {
         if (!subscribedToEvents)
         {
-            LevelManager.Instance.OnPlayerWentIndoors += SetGoToLastKnownLocation;
-            LevelManager.Instance.OnPlayerWentIndoors += CutSpeed;
+            levelManager.OnPlayerWentIndoors += SetGoToLastKnownLocation;
+            levelManager.OnPlayerWentIndoors += CutSpeed;
 
-            LevelManager.Instance.OnPlayerWentOutdoors += SetChasePlayer;
-            LevelManager.Instance.OnPlayerWentOutdoors += RestoreSpeed;
+            levelManager.OnPlayerWentOutdoors += SetChasePlayer;
+            levelManager.OnPlayerWentOutdoors += RestoreSpeed;
 
             subscribedToEvents = true;
         }

@@ -2,10 +2,14 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance { get; private set; }
+    [Header("Level info")]
+    [SerializeField] protected int levelIndex;
+    [SerializeField] protected int nextLevelIndex = -1;
+    [SerializeField] protected bool levelCompleted = false;
 
     // Global alert state (read-only publicly)
     protected bool globalAlerted;
@@ -24,13 +28,7 @@ public class LevelManager : MonoBehaviour
 
     protected virtual void Awake()
     {
-        // Ensure singleton instance
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
+
     }
 
     protected virtual void Start()
@@ -38,6 +36,19 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public void setCompleteLevel()
+    {
+        Debug.Log("Level objectives compeleted, can end level");
+        levelCompleted = true;
+    }
+
+    public void CompleteLevel()
+    {
+        if (levelCompleted && nextLevelIndex > 0)
+        {
+            SceneManager.LoadScene(nextLevelIndex);
+        }
+    }
 
     public void SetPlayerIndoors(FortController setter, bool value)
     {

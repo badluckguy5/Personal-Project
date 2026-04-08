@@ -54,11 +54,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     public void RegisterEnemyKill(EnemyType type)
     {
         int killCount = killTracker.IncrementKillCount(type);

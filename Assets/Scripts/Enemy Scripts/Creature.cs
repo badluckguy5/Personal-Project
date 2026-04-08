@@ -14,6 +14,8 @@ public class Creature : MonoBehaviour
 
     public EnemyType enemyType;
 
+    public LevelManager levelManager;
+
     protected virtual void Awake()
     {
         if (worldSpaceCanvasTransform == null)          //Find UI Canvas
@@ -60,6 +62,8 @@ public class Creature : MonoBehaviour
         //healthBarInstance.transform.localScale = Vector3.one; // Reset scale so it's visible
         healthBarInstance.target = transform;
 
+        WaitForLevelManager();
+
     }
 
     void Update()
@@ -91,6 +95,15 @@ public class Creature : MonoBehaviour
         Destroy(gameObject); // Or trigger death animation
         Destroy(healthBarInstance.gameObject);
 
+    }
+
+    private System.Collections.IEnumerator WaitForLevelManager()
+    {
+        while (levelManager == null)
+        {
+            levelManager = FindAnyObjectByType<LevelManager>();
+            yield return null; // wait for next frame
+        }
     }
 
 

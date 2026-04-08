@@ -99,8 +99,8 @@ public class FortController : BasicBuilding
             if (player != null && indoorsLocation != null)
             {
                 playerLastLocation = player.transform.position;
-                LevelManager.Instance.SetPlayerLastLocation(this, playerLastLocation);
-                LevelManager.Instance.SetPlayerIndoors(this, true);
+                levelManager.SetPlayerLastLocation(this, playerLastLocation);
+                levelManager.SetPlayerIndoors(this, true);
 
 
                 player.transform.position = indoorsLocation.position;
@@ -141,7 +141,7 @@ public class FortController : BasicBuilding
         playerInsideFort = false;
         enemyQueue.Clear();
 
-        LevelManager.Instance.SetPlayerIndoors(this, false);
+        levelManager.SetPlayerIndoors(this, false);
 
 
         if (!GetFortIntact())

@@ -6,7 +6,16 @@ public class Level1Manager : LevelManager
     protected override void Awake()
     {
         base.Awake();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
         globalAlerted = false;
+
+        levelIndex = 1;
+        nextLevelIndex = 2;
+        levelCompleted = true;
     }
 
     // Update is called once per frame
