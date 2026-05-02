@@ -4,13 +4,13 @@ public class BasicEnemy : Creature
 {
     private bool subscribedToEvents = false;
 
-    private GameObject player; // Reference to the player's position
-    private Vector3 targetPosition;
-    public bool chasingPlayer = false;
+    protected GameObject player; // Reference to the player's position
+    protected Vector3 targetPosition;
+    protected bool chasingPlayer = false;
 
-    private float baseSpeed = 5f;
-    private float moveSpeed = 5f; // Speed at which the enemy moves
-    private bool alerted = false;
+    [SerializeField]protected float baseSpeed = 5f;
+    protected float moveSpeed = 5f; // Speed at which the enemy moves
+    protected bool alerted = false;
 
     protected override void OnEnable()
     {
@@ -81,7 +81,7 @@ public class BasicEnemy : Creature
         }
     }
 
-    void Update()
+    protected void Update()
     {
         if (player != null && alerted)
         {
@@ -121,7 +121,7 @@ public class BasicEnemy : Creature
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -148,7 +148,7 @@ public class BasicEnemy : Creature
         Destroy(healthBarInstance.gameObject);
     }
 
-    private void SetGoToLastKnownLocation(Vector3 lastKnownPosition)
+    protected void SetGoToLastKnownLocation(Vector3 lastKnownPosition)
     {
         chasingPlayer = false;
         targetPosition = lastKnownPosition;
@@ -163,14 +163,14 @@ public class BasicEnemy : Creature
         }
     }
 
-    private void GoToLastKnownLocation()
+    protected void GoToLastKnownLocation()
     {
         Vector3 direction = targetPosition - transform.position; // Direction towards player
 
         transform.Translate(direction.normalized * moveSpeed * Time.deltaTime); // Move the enemy towards the last known location
     }
 
-    private void ChasePlayer()
+    protected void ChasePlayer()
     {
         if (player != null)
         {

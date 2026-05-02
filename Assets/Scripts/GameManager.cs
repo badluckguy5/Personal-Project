@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
+
     }
 
     public void BindSceneReferences (GameObject player, GameObject gameOverScreen, FloatingMessageSpawner messageSpawner)

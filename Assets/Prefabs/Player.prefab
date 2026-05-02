@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 8941886506540189715}
   - component: {fileID: 1620348617692160276}
   - component: {fileID: 6499064309848241291}
+  - component: {fileID: 1865338172400741578}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -332,6 +333,7 @@ MonoBehaviour:
   indoors: 0
   healthBarPrefab: {fileID: 0}
   enemyType: 2
+  levelManager: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &8941886506540189715
 MonoBehaviour:
@@ -345,6 +347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23d50226121b9d419f83c71c34bf20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  shootCooldown: 1
+  shootRange: 10
+  bulletSpeed: 10
 --- !u!114 &1620348617692160276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +377,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51171d3027f842340893df81e7dae688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1865338172400741578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6303202729840377894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80896704377941f4eb9f3a17649e6b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerEquipment
 --- !u!1 &6308551718920559589
 GameObject:
   m_ObjectHideFlags: 0

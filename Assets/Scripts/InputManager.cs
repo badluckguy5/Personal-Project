@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
     public event System.Action OnJump;
     public event System.Action OnAttack;
     public event System.Action OnSprint;
-    
+    public event System.Action InventoryToggle;
 
     private void Awake()
     {
@@ -37,12 +37,19 @@ public class InputManager : MonoBehaviour
         controls.Player.Attack.performed += ctx => OnAttack?.Invoke();
 
         controls.Player.Sprint.performed += ctx => OnSprint?.Invoke();
+
+        controls.Player.ToggleInventory.performed += ctx => InventoryToggle?.Invoke();
     }
 
 
     private void OnDestroy()
     {
         controls?.Dispose();
+    }
+
+    private void Update()
+    {
+        
     }
 
 }

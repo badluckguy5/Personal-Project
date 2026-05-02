@@ -14,7 +14,7 @@ public class Creature : MonoBehaviour
 
     public EnemyType enemyType;
 
-    public LevelManager levelManager;
+    protected LevelManager levelManager;
 
     protected virtual void Awake()
     {

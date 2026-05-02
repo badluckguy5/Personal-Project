@@ -25,7 +25,6 @@ public class PlayerController : Creature
 
         maxHealth = 3;
 
-        
     }
 
     private void OnDestroy()
