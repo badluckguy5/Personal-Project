@@ -10,6 +10,7 @@ public class PlayerShooter : MonoBehaviour
     public Transform shootPoint;            // The point from where the projectile will be shot
 
     private float lastShootTime = 0f;
+    private bool shootEnabled = true;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class PlayerShooter : MonoBehaviour
 
     public void PlayerShoot()
     {
-        if (!CanShoot()) { return; }
+        if (!CanShoot() || (!shootEnabled)) { return; }
 
         GameObject closestEnemy = finder.FindClosestEnemy(stats.GetShootRange);
 
@@ -37,7 +38,7 @@ public class PlayerShooter : MonoBehaviour
         lastShootTime = Time.time;
     }
 
-    void FireProjectile(Vector3 direction)
+    private void FireProjectile(Vector3 direction)
     {
         if (projectilePrefab != null && shootPoint != null)
         {
@@ -49,5 +50,15 @@ public class PlayerShooter : MonoBehaviour
             }
         }
 
+    }
+
+    public void disablePlayerShooting()
+    {
+        shootEnabled = false;
+    }
+
+    public void enablePlayerShooting()
+    {
+        shootEnabled = true;
     }
 }

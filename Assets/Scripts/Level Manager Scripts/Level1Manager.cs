@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Level1Manager : LevelManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject[] buildingsToDestroy;
+
     protected override void Awake()
     {
         base.Awake();
@@ -13,14 +14,34 @@ public class Level1Manager : LevelManager
         base.Start();
         globalAlerted = false;
 
-        levelIndex = 1;
-        nextLevelIndex = 2;
-        levelCompleted = true;
+        levelIndex = 2;
+        nextLevelIndex = 3;
+        levelCompleted = false;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (levelCompleted) return;
+
+        bool allDestroyed = true;
+
+        foreach (GameObject buildings in buildingsToDestroy)
+        {
+            if (buildings != null)
+            {
+                allDestroyed = false;
+                break;
+            }
+
+        }
+
+        if (allDestroyed)
+        {
+
+        levelCompleted = true;
+        }
+
     }
+
 }

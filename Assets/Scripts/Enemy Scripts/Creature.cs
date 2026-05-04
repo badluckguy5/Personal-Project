@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class Creature : MonoBehaviour
@@ -47,8 +46,6 @@ public class Creature : MonoBehaviour
         }
     }
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
         currentHealth = maxHealth;

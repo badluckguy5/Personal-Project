@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6852266985677421515}
   - component: {fileID: 5187320152853812517}
   - component: {fileID: 1350870162455440907}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BasicBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +67,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -88,9 +90,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6852266985677421515
 BoxCollider:
@@ -126,8 +130,8 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 512
+  m_LayerOverridePriority: 1
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -148,6 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
   spawnPoints: []
+  spawnInterval: 5
+  fortDestroyTime: 3
 --- !u!1 &3949285955905359900
 GameObject:
   m_ObjectHideFlags: 0

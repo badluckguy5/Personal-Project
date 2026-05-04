@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5788322928090831893}
   - component: {fileID: 785983452037575602}
   - component: {fileID: 8657791998671496726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BasicEnemyRanged
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   indoors: 0
   healthBarPrefab: {fileID: 3323621053046049925, guid: fa9def8058071af4fa9a8185e2d8ce77, type: 3}
   enemyType: 4
-  levelManager: {fileID: 0}
+  baseSpeed: 5
   range: 10
   aimTime: 2
   shooting: 0
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7231210828312824164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5726889220185064115}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2018209941835543778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fort Cores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7163029689660758966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4136609374392719629}
   - component: {fileID: 595067456809561966}
   - component: {fileID: 330402118858756503}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -197,9 +199,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &330402118858756503
 BoxCollider:
@@ -234,7 +238,7 @@ GameObject:
   - component: {fileID: 4228337628031889445}
   - component: {fileID: 776777397358877083}
   - component: {fileID: 3265572206436317705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fort Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,6 +292,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -309,9 +315,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &3265572206436317705
 MeshCollider:
@@ -347,7 +355,7 @@ GameObject:
   - component: {fileID: 8645835153704070798}
   - component: {fileID: 9199869765852001165}
   - component: {fileID: 861968003857769851}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,6 +405,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -418,9 +428,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &861968003857769851
 BoxCollider:
@@ -483,7 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5965082623559813328}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +535,7 @@ GameObject:
   - component: {fileID: 3413156550663845707}
   - component: {fileID: 4138108472444609403}
   - component: {fileID: 3373480558192849804}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,6 +590,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -599,9 +613,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3413156550663845707
 BoxCollider:
@@ -637,8 +653,8 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 512
+  m_LayerOverridePriority: 1
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -661,8 +677,13 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 2442258127259822704}
   - {fileID: 7599124531427776075}
+  spawnInterval: 5
+  fortDestroyTime: 3
+  reinforcementTime: 4.5
   indoorsLocation: {fileID: 2145942540362658147}
   exitLocation: {fileID: 1234794378447127665}
+  enemyIndoorsTeleport: {fileID: 0}
+  triggerCollider: {fileID: 0}
 --- !u!1 &4467768719162000684
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +696,7 @@ GameObject:
   - component: {fileID: 4323753142563558810}
   - component: {fileID: 3019757416694866062}
   - component: {fileID: 3833411785048540812}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,6 +746,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -746,9 +769,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3833411785048540812
 BoxCollider:
@@ -783,7 +808,7 @@ GameObject:
   - component: {fileID: 3421297840126003745}
   - component: {fileID: 6300686419834967139}
   - component: {fileID: 8053749197515780450}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,6 +858,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -854,9 +881,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8053749197515780450
 BoxCollider:
@@ -891,7 +920,7 @@ GameObject:
   - component: {fileID: 7946781000444337042}
   - component: {fileID: 5307294305356024425}
   - component: {fileID: 488998879017209059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,6 +970,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -962,9 +993,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &488998879017209059
 BoxCollider:
@@ -999,7 +1032,7 @@ GameObject:
   - component: {fileID: 4223300453099427738}
   - component: {fileID: 2912220039840740522}
   - component: {fileID: 997534373469745693}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,6 +1082,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1070,9 +1105,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &997534373469745693
 BoxCollider:
@@ -1107,7 +1144,7 @@ GameObject:
   - component: {fileID: 3432279658028081542}
   - component: {fileID: 4552353443231970440}
   - component: {fileID: 8331235425422798238}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,6 +1194,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1178,9 +1217,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8331235425422798238
 BoxCollider:
@@ -1215,7 +1256,7 @@ GameObject:
   - component: {fileID: 7021019896076293284}
   - component: {fileID: 8716833903452376236}
   - component: {fileID: 4705364299011720607}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,6 +1306,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1286,9 +1329,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4705364299011720607
 BoxCollider:
@@ -1354,7 +1399,7 @@ GameObject:
   - component: {fileID: 51521457254943353}
   - component: {fileID: 7548691822938340047}
   - component: {fileID: 6448794506445922107}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,6 +1449,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1425,9 +1472,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6448794506445922107
 BoxCollider:
@@ -1493,7 +1542,7 @@ GameObject:
   - component: {fileID: 2489527371709554557}
   - component: {fileID: 5543262400102359244}
   - component: {fileID: 5202873457425647707}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,6 +1592,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1564,9 +1615,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &5202873457425647707
 BoxCollider:
@@ -1682,6 +1735,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1703,9 +1758,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &4891297125039638830
 MeshCollider:
@@ -1741,7 +1798,7 @@ GameObject:
   - component: {fileID: 5412547924682937954}
   - component: {fileID: 5346321423867819714}
   - component: {fileID: 7985177422539990320}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1791,6 +1848,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1812,9 +1871,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7985177422539990320
 BoxCollider:
@@ -1849,7 +1910,7 @@ GameObject:
   - component: {fileID: 7708316039843866589}
   - component: {fileID: 61959569085604506}
   - component: {fileID: 8688688889998607426}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1899,6 +1960,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1920,9 +1983,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8688688889998607426
 BoxCollider:
@@ -2077,6 +2142,10 @@ PrefabInstance:
       value: BasicEnemy (8)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2153,6 +2222,10 @@ PrefabInstance:
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_Name
       value: BasicEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
@@ -2233,6 +2306,10 @@ PrefabInstance:
       value: BasicEnemy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2309,6 +2386,10 @@ PrefabInstance:
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_Name
       value: BasicEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
@@ -2389,6 +2470,10 @@ PrefabInstance:
       value: BasicEnemy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2413,6 +2498,10 @@ PrefabInstance:
     - target: {fileID: 2204982581360605105, guid: 8e4303cdf0fe0ae479eb9f4a119263e5, type: 3}
       propertyPath: m_Name
       value: Spawn Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204982581360605105, guid: 8e4303cdf0fe0ae479eb9f4a119263e5, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734948373479881342, guid: 8e4303cdf0fe0ae479eb9f4a119263e5, type: 3}
       propertyPath: m_LocalScale.x
@@ -2541,6 +2630,10 @@ PrefabInstance:
       value: BasicEnemy (10)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2605,6 +2698,10 @@ PrefabInstance:
     - target: {fileID: 6613038911256557884, guid: 8e64c5ee92884fa449dbea9e7049050c, type: 3}
       propertyPath: m_Name
       value: Fort Core 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613038911256557884, guid: 8e64c5ee92884fa449dbea9e7049050c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2679,6 +2776,10 @@ PrefabInstance:
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_Name
       value: BasicEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
@@ -2759,6 +2860,10 @@ PrefabInstance:
       value: BasicEnemy (9)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2837,6 +2942,10 @@ PrefabInstance:
       value: BasicEnemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2913,6 +3022,10 @@ PrefabInstance:
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_Name
       value: BasicEnemy (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1205278524020197662, guid: 1c31a08df66b2bc449fe56d828fbc69b, type: 3}
       propertyPath: m_IsActive

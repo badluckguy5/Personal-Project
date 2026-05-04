@@ -197,4 +197,15 @@ public class BasicEnemy : Creature
             moveSpeed = baseSpeed;
         }
     }
+
+    public void ApplySpeedDebuff(float speed)
+    {
+        moveSpeed *= speed;
+    }
+
+    public void RemoveSpeedDebuff(float speed)
+    {
+        moveSpeed /= speed;
+    }
+
 }

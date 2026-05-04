@@ -8,6 +8,7 @@ public class BasicEnemyRanged : BasicEnemy
     [SerializeField] protected float aimTime = 2f;
     [SerializeField] protected bool shooting = false;
     [SerializeField] private float targetDistance;
+    [SerializeField] private bool shootingEnabled = true;
 
     public Transform shootPoint;
     public GameObject projectilePrefab;
@@ -18,8 +19,14 @@ public class BasicEnemyRanged : BasicEnemy
         
         if (targetDistance < range)
         {
-            shooting = true;
-            StartCoroutine(AimAndShoot());
+            if (shootingEnabled)
+            {
+                shooting = true;
+                StartCoroutine(AimAndShoot());
+            }
+
+            else return;
+            
         }
     }
 
@@ -36,7 +43,6 @@ public class BasicEnemyRanged : BasicEnemy
             else
             {
                 GoToLastKnownLocation();
-                UpdateTargetDistance();
             }
         }
     }
@@ -68,4 +74,13 @@ public class BasicEnemyRanged : BasicEnemy
         Shoot();
     }
 
+    public void EnableShooting()
+    {
+        shootingEnabled = true;
+    }
+
+    public void DisableShooting() 
+    { 
+        shootingEnabled = false;
+    }
 }

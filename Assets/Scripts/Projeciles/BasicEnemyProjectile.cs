@@ -12,6 +12,9 @@ public class BasicEnemyProjectile : MonoBehaviour
     [SerializeField] private float currDistance = 0f;
     [SerializeField] private float maxDistance = 20f;
 
+    private int playerLayer = 6;
+    private int obstacleLayer = 11;
+
     private void Start()
     {
         Destroy(gameObject, lifetime);
@@ -29,24 +32,17 @@ public class BasicEnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the bullet hits an enemy or the ground
-        if (other.CompareTag("Ground"))
+        int otherLayer = other.gameObject.layer;
+
+        if (otherLayer == playerLayer)
         {
-
-            Destroy(gameObject);  // Destroy the bullet GameObject
-
+            other.GetComponent<Creature>()?.TakeDamage(damage);
+            Destroy(gameObject);
         }
 
-        if (other.CompareTag("Player"))
+        else if (otherLayer == obstacleLayer)
         {
-            Creature player = other.GetComponent<Creature>();
-
-            if (player != null)
-            {
-                player.TakeDamage(damage);
-            }
             Destroy(gameObject);
-
         }
 
     }
