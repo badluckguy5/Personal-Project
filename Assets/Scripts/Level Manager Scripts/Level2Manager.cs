@@ -14,7 +14,7 @@ public class Level2Manager : LevelManager
 
         levelIndex = 3;
         nextLevelIndex = 4;
-        levelCompleted = false;
+        levelCompleted = true;
 
     }
 
