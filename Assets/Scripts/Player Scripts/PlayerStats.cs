@@ -7,11 +7,13 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float shootCooldown = 1f;        // Time between shots
     [SerializeField] private float shootRange = 10f;          // Range of the shooting
     [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField] private float bulletDamage = 1f;
 
     public float GetSpeed => speed;
     public float GetShootCooldown => shootCooldown;
     public float GetShootRange => shootRange;
     public float GetBulletSpeed => bulletSpeed;
+    public float GetBulletDamage => bulletDamage;
 
     public void ApplyUpgrade(StatUpgradeSO upgrade)
     {
@@ -36,6 +38,12 @@ public class PlayerStats : MonoBehaviour
                 Apply(ref bulletSpeed, upgrade);
                 Debug.Log("Bullet speed is now: " + bulletSpeed);
                 break;
+
+            case PlayerStat.BulletDamage:
+                Apply(ref bulletDamage, upgrade);
+                Debug.Log("Bullet damage is now: " + bulletDamage);
+                break;
+
         }
     }
 
@@ -78,6 +86,10 @@ public class PlayerStats : MonoBehaviour
                 Remove(ref bulletSpeed, upgrade);
                 Debug.Log("Bullet speed reverted to: " + bulletSpeed);
                 break;
+            case PlayerStat.BulletDamage:
+                Remove(ref bulletDamage, upgrade);
+                Debug.Log("Bullet damage is now: " + bulletDamage);
+                break;
         }
     }
 
@@ -94,7 +106,7 @@ public class PlayerStats : MonoBehaviour
                 break;
         }
 
-        // Optional: clamp back to minimums
+        // To do: Clamp back to minimums
     }
 
 }

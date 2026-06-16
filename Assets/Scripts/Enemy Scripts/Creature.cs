@@ -63,11 +63,6 @@ public class Creature : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     public virtual void TakeDamage(float amount)
     {
         currentHealth -= amount;

@@ -33,4 +33,19 @@ public class UpgradeSystem
     {
         return milestones.TryGetValue((type, killCount), out upgrade);
     }
+
+    public bool TryGetUpgradeByID(string upgradeID, out StatUpgradeSO upgrade)
+    {
+        string[] parts = upgradeID.Split('_');
+        if (parts.Length == 2)
+        {
+            EnemyType type = (EnemyType)System.Enum.Parse(typeof(EnemyType), parts[0]);
+            int killCount = int.Parse(parts[1]);
+            return TryGetUpgrade(type, killCount, out upgrade);
+        }
+
+        upgrade = null;
+        return false;
+    }
+
 }

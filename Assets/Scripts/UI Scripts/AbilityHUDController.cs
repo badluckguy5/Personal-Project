@@ -107,7 +107,6 @@ public class AbilityHUDController : MonoBehaviour
 
         }
 
-
         return abilities;
     }
 

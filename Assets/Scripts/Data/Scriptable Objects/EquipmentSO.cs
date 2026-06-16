@@ -4,6 +4,7 @@ using UnityEngine;
 public class EquipmentSO : ScriptableObject
 {
     public string equipmentName;
+    public string itemID;
     public EquipmentType equipmentType;
     public Sprite icon;
     public string description;

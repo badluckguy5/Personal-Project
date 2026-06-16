@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
+    private int obstacleLayer = 11;
 
     void Update()
     {
@@ -28,10 +29,17 @@ public class BulletMovement : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.TakeDamage(1f); // Deal 1 damage
+                enemy.TakeDamage(GameObject.Find("Player").GetComponent<PlayerStats>().GetBulletDamage); // Deal 1 damage
             }
             Destroy(gameObject);    //Destroy bullet
 
+        }
+
+        int otherLayer = other.gameObject.layer;
+
+        if (otherLayer == obstacleLayer)
+        {
+            Destroy(gameObject);
         }
 
     }

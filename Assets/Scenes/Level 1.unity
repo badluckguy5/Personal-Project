@@ -1846,7 +1846,7 @@ MonoBehaviour:
   levelIndex: 0
   nextLevelIndex: 0
   levelCompleted: 0
-  buildingsToDestroy:
+  entitiesToDestroy:
   - {fileID: 182560523}
   - {fileID: 1334550455}
   - {fileID: 434926392}

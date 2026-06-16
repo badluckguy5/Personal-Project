@@ -43,8 +43,6 @@ public class BasicEnemy : Creature
     protected override void Awake()
     {
         base.Awake();
-
-        maxHealth = 2;
     }
 
 
@@ -121,7 +119,7 @@ public class BasicEnemy : Creature
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

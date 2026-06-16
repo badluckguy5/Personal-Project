@@ -11,4 +11,9 @@ public class StatUpgradeSO : ScriptableObject
     public float amount;
     [TextArea]
     public string description;
+
+    public string GetUpgradeID()
+    {
+        return $"{appliesToEnemy}_{unlockKillCount}";
+    }
 }

@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIController : MonoBehaviour
 {
+    private int startLevelIndex = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,12 @@ public class MenuUIController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(startLevelIndex);
+    }
+
+    public void LoadGame()
+    {
+        GameManager.Instance.LoadGame();
+        startLevelIndex = GameManager.Instance.GetLevelIndex();
     }
 }

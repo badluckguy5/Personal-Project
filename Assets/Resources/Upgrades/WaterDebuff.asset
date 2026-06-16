@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15ae4ee6fd43994cb95e8e3d073cfa6, type: 3}
   m_Name: WaterDebuff
   m_EditorClassIdentifier: Assembly-CSharp::StatUpgradeSO
-  appliesToEnemy: 0
+  appliesToEnemy: 6
   unlockKillCount: 0
   upgradeName: Water Slow
   stat: 0

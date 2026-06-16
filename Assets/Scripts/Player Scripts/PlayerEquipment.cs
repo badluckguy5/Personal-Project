@@ -91,6 +91,21 @@ public class PlayerEquipment : MonoBehaviour
         return equippedItems;
     }
 
+    public List<string> GetAllEquippedItemIDS()
+    {
+        List<string> equippedItemIDS = new List<string>();
+
+        foreach (ItemInstance item in equippedItems.Values)
+        {
+            if (item != null && item.itemData != null && !string.IsNullOrEmpty(item.itemData.itemID))
+            {
+                equippedItemIDS.Add(item.itemData.itemID);
+            }
+        }
+
+        return equippedItemIDS;
+    }
+
     public bool IsItemEquipped(ItemInstance item)
     {
         if (item == null || item.itemData == null) { return false; }

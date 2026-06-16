@@ -2,5 +2,5 @@ using UnityEngine;
 
 public enum EnemyType
 {
-    Basic, Fast, Player, Fort_Core, BasicRanged
+    Basic, Fast, Player, Fort_Core, BasicRanged, BasicTower, MISC
 }

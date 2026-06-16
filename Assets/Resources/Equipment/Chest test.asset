@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chest test
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentSO
   equipmentName: Test Chest
+  itemID: Test_Chest
   equipmentType: 1
   icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   description: Whatever

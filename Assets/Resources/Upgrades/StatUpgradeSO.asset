@@ -16,8 +16,6 @@ MonoBehaviour:
   unlockKillCount: 10
   upgradeName: Speed Up
   stat: 0
-  upgradeType: 1
-  amount: 2
-  description: 'Doubles Speed
-
-'
+  upgradeType: 0
+  amount: 10
+  description: Increase Speed

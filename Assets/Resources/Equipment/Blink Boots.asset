@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Blink Boots
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentSO
   equipmentName: Blink Boots
+  itemID: Blink_Boots
   equipmentType: 4
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   description: Blinks with a short blink

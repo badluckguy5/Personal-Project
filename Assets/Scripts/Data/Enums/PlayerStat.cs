@@ -5,5 +5,6 @@ public enum PlayerStat
     Speed,
     ShootCooldown,
     ShootRange,
-    BulletSpeed
+    BulletSpeed,
+    BulletDamage
 }

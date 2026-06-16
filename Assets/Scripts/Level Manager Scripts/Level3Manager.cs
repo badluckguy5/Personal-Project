@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Level1Manager : LevelManager
+public class Level3Manager : LevelManager
 {
     protected override void Awake()
     {
@@ -12,15 +12,16 @@ public class Level1Manager : LevelManager
         base.Start();
         globalAlerted = false;
 
-        levelIndex = 2;
-        nextLevelIndex = 3;
-        levelCompleted = false;
+        levelIndex = 4;
+        nextLevelIndex = 5;
+        levelCompleted = true;
 
     }
 
     void Update()
     {
-        CheckDestroyObjectives();
+
+
     }
 
 }

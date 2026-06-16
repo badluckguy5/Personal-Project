@@ -7,13 +7,13 @@ public class BasicEnemyRanged : BasicEnemy
     [SerializeField] protected float range = 10f;
     [SerializeField] protected float aimTime = 2f;
     [SerializeField] protected bool shooting = false;
-    [SerializeField] private float targetDistance;
-    [SerializeField] private bool shootingEnabled = true;
+    [SerializeField] protected float targetDistance;
+    [SerializeField] protected bool shootingEnabled = true;
 
     public Transform shootPoint;
     public GameObject projectilePrefab;
     
-    private void UpdateTargetDistance()
+    protected void UpdateTargetDistance()
     {
         targetDistance = Vector3.Distance(transform.position, targetPosition);
         
@@ -67,7 +67,7 @@ public class BasicEnemyRanged : BasicEnemy
 
     }
 
-    private IEnumerator AimAndShoot()
+    protected IEnumerator AimAndShoot()
     {
         yield return new WaitForSeconds(aimTime);
 

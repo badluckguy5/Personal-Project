@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] protected int levelIndex;
     [SerializeField] protected int nextLevelIndex = -1;
     [SerializeField] protected bool levelCompleted = false;
+    [SerializeField] protected GameObject[] entitiesToDestroy;
 
     // Global alert state (read-only publicly)
     protected bool globalAlerted;
@@ -33,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
     protected virtual void Start()
     {
-
+        GameManager.Instance.ReequipItemsAfterLoad();
     }
 
     public void setCompleteLevel()
@@ -46,7 +47,32 @@ public class LevelManager : MonoBehaviour
     {
         if (levelCompleted && nextLevelIndex > 0)
         {
+            GameManager.Instance.SaveGame(nextLevelIndex);
             SceneManager.LoadScene(nextLevelIndex);
+            GameManager.Instance.LoadGame();
+        }
+    }
+
+    protected void CheckDestroyObjectives()
+    {
+        if (levelCompleted) return;
+
+        bool allDestroyed = true;
+
+        foreach (GameObject entities in entitiesToDestroy)
+        {
+            if (entities != null)
+            {
+                allDestroyed = false;
+                break;
+            }
+
+        }
+
+        if (allDestroyed)
+        {
+
+            setCompleteLevel();
         }
     }
 
@@ -81,4 +107,5 @@ public class LevelManager : MonoBehaviour
             Debug.LogWarning("Unauthorized attempt to set PlayerLastLocation");
         }
     }
+
 }
