@@ -48,18 +48,24 @@ The game saves all this information on every level completion, and loads the inf
 
 ## Technical Challenges
 PROBLEM: When the player "invades" a fort, move the player to another location but keep the enemies "outside" active and doing something because time wouldn't stop for them. <br>
+
 SOLUTION: For enemies already created and "outside", have the fort send out an event that tells all enemies that the player is now indoors. The level manager will save the player's last
 known location, and the outdoors enemies will move at a reduced speed towards the last known location. When they reach the invaded fort, the fort will allow them to "invade" like how the player does in order to 
 keep chasing them. They will resume normal movement speed once they do. Any newly created enemies will check player's indoor/outdoor condition and follow suite. <br>
+
 RESULT: Enemies have 2 different states, tracking a player that is indoors vs. outdoors. Events will be sent out any time they need to switch, and they will adjust automatically. 
 
-<img width="600" height="428" alt="image" src="https://github.com/user-attachments/assets/5ea90bf2-ab16-43e5-aeb7-4960db0f045d" />
+<img width="600" height="428" alt="Indoors" src="https://github.com/user-attachments/assets/522e07c6-bb9e-4185-8e26-efb603f5b262" />
+
 
 
 PROBLEM: Create a player UI that accurately tracks which items the player has equipped, which have abilities and any cooldown remaining on those abilities.
+
 SOLUTION: Create two separate "inventories", one tracking all acquired items in the Game Manager and one tracking equipped items on the player. The Game Manager inventory is being used as a data bank 
 and when the player equips an item, an instance will be created of that item in the player inventory. This instance is going to be the one that displays any relevant active information, such as cooldown. 
+
 RESULT: Inventory Window can differentiate between multiple copies of the same item, and equipped items all have their own visible, separate cooldowns.
 
-<img width="600" height="428" alt="image" src="https://github.com/user-attachments/assets/516d8342-f291-4de6-b0e4-5b9d82cddfd2" />
+<img width="600" height="428" alt="Inventory" src="https://github.com/user-attachments/assets/6a1bc762-11f9-4609-a433-d0d98efb2c85" />
+
 
